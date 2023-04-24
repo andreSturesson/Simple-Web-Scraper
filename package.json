@@ -1,0 +1,43 @@
+{
+  "name": "b1-scraper",
+  "version": "1.0.0",
+  "description": "A somewhat dynamic webscraper",
+  "main": "main.js",
+  "type": "module",
+  "scripts": {
+    "htmlhint": "npx htmlhint ./public || exit 0",
+    "stylelint": "npx stylelint \"./public/**/*.css\" || exit 0",
+    "stylelint:fix": "npx stylelint --ext .mjs --fix \"./public/**/*.css\" || exit 0",
+    "eslint": "npx eslint . --ext .mjs || exit 0",
+    "eslint:fix": "npx eslint . --ext .mjs --fix || exit 0",
+    "jsdoc": "npx jsdoc -c .jsdoc.json || exit 0",
+    "lint": "npm run htmlhint && npm run stylelint && npm run eslint",
+    "clean": "rm -rf build/",
+    "clean-all": "npm run clean && rm -rf node_modules/ && rm -f package-lock.json",
+    "start": "node main.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@gitlab.lnu.se:1dv528/student/as226ng/b1-scraper.git"
+  },
+  "keywords": [
+    "web-scraper"
+  ],
+  "author": "André Sturesson",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^8.31.0",
+    "eslint-config-standard": "^17.0.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-jsdoc": "^39.6.4",
+    "eslint-plugin-n": "^15.6.1",
+    "eslint-plugin-promise": "^6.1.1",
+    "htmlhint": "^1.1.4",
+    "jsdoc": "^4.0.0",
+    "stylelint": "^14.16.1"
+
+  },
+  "dependencies": {
+    "jsdom": "^21.0.0"
+  }
+}
